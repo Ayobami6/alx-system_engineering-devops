@@ -1,0 +1,2 @@
+#!/bin/bash
+cut -f1 -d '\t' | sort | uniq -c | tr -s '' | sort -nrt '' -k1 | head -n 11| cut -d '' \ -f3
