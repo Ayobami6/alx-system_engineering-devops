@@ -3,23 +3,7 @@
 
 apt-get -y update
 apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-touch /var/www/html/index.html
-sh -c "echo 'Hello World!' > /var/www/html/index.html"
-SERVER_CONFIG="server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	# Add index.php to the list if you are using PHP
-	index index.html index.htm index.nginx-debian.html;
-
-	server_name _;
-
-	location /redirect_me {
-		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
-	}
-}"
-sh -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
+sudo sed -i '/server {/a location /redirect_me { return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; }' /etc/nginx/sites-enabled/default
 
 if [ "$(pgrep -c nginx)" -le 0 ]
 then
