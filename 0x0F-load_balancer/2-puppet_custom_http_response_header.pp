@@ -17,7 +17,7 @@ exec {'install nginx':
 exec {'add_header':
 	provider     => shell,
 	environment  => ["HOST=${HOSTNAME}"],
-	command      => 'echo "add_header X-Served-By $hostname;" | sudo tee -a /etc/nginx/nginx.conf > /dev/null',
+	command      => 'echo "add_header X-Served-By $HOSTNAME;" | sudo tee -a /etc/nginx/nginx.conf > /dev/null',
 
 }
 
