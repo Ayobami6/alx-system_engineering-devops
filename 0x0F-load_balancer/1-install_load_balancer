@@ -8,13 +8,13 @@ echo "ENABLED=1" > /etc/default/haproxy
 
 LISTEN="
 	listen lb_server
-	bind *:80
-	mode http
-	balance roundrobin
-	option httpclose
-	option forwardfor
-	server 167957-web-01 18.209.225.63:80 check
-	server 167957-web-02 100.25.17.109:80 check
+			bind *:80
+			mode http
+			balance roundrobin
+			option httpclose
+			option forwardfor
+			server 167957-web-01 18.209.225.63:80 check
+			server 167957-web-02 100.25.17.109:80 check
 "
 
 echo "$LISTEN" >> /etc/haproxy/haproxy.cfg
