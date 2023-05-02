@@ -13,8 +13,8 @@ listen lb_server
 	balance roundrobin
 	option httpclose
 	option forwardfor
-	server web-01 167957-web-01:80 check
-	server web-02 167957-web-02:80 check
+	server web-01:80 check
+	server web-02:80 check
 "
 
 sudo echo "$LISTEN" >> /etc/haproxy/haproxy.cfg
