@@ -15,6 +15,7 @@ SERVER_CONFIG="server {
 	index index.html index.htm index.nginx-debian.html;
 
 	server_name _;
+	add_header X-Served-By $HOSTNAME;
 
 	location / {
 		try_files \$uri \$uri/ =404;
@@ -28,5 +29,4 @@ SERVER_CONFIG="server {
 	}
 }"
 sudo sh -c "echo '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
-echo 'add_header X-Served-By $hostname;' | sudo tee -a /etc/nginx/nginx.conf > /dev/null
 sudo service nginx restart
