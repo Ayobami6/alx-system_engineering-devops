@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get install haproxy
 
-echo "ENABLED=1" > /etc/default/haproxy
+sudo echo "ENABLED=1" > /etc/default/haproxy
 
 LISTEN="
 	listen lb_server
@@ -17,5 +17,5 @@ LISTEN="
 			server 167957-web-02 100.25.17.109:80 check
 "
 
-echo "$LISTEN" >> /etc/haproxy/haproxy.cfg
+sudo echo "$LISTEN" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy start
