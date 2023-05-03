@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Refactored port 80 fix
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+service nginx start
+kill "$(pgrep 'nginx' | head -1)"
+
