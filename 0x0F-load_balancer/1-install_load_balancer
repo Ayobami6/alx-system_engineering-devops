@@ -2,7 +2,7 @@
 # Install and setup haprozy loadbalancer
 
 sudo apt-get update
-sudo apt-get install haproxy
+sudo apt-get install -y haproxy
 
 sudo echo "ENABLED=1" > /etc/default/haproxy
 
