@@ -1,4 +1,5 @@
 #!/bin/bash
+# Shows Domains and Domains information
 
 audit_subdomain () 
 {
