@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Shows Domains and Domains information
 
 audit_subdomain () 
