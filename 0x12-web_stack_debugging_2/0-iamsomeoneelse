@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# get user from the user passed
+sudo -u "$1" whoami
