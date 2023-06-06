@@ -32,7 +32,8 @@ def count_words(subreddit, word_list, after=None, word_counts=None):
         for word in word_list:
             if word.lower() in title.lower():
                 # get the value of the key, if it doesn't exist, return 0
-                word_counts[word] = word_counts.get(word, 0) + 1
+                word_counts[word.lower()] = word_counts.get(
+                    word.lower(), 0) + 1
     after = response.json()["data"]["after"]
     # if end of pagination and word_counts is empty, print nothing and return
     if after is None:
