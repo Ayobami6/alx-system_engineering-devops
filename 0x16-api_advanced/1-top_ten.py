@@ -10,7 +10,7 @@ def top_ten(subreddit):
     headers = {'User-Agent': 'Ayo User Agent 1.0'}
     response = requests.get(url, headers=headers, allow_redirects=False)
     if response.status_code != 200:
-        print(None)
+        print("None")
         return
     posts = response.json().get('data').get('children')
     for post in posts[:10]:
