@@ -20,7 +20,6 @@ def recurse(subreddit: str, hot_list: Optional[List[str]] = None, after:
         return None
     posts = response.json().get('data').get('children')
     hot_list = hot_list or []
-    for post in posts:
-        hot_list.append(post["data"]["title"])
+    [hot_list.append(post["data"]["title"]) for post in posts]
     after = response.json()["data"]["after"]
     return hot_list if after is None else recurse(subreddit, hot_list, after)
