@@ -5,11 +5,7 @@ import requests
 
 
 def top_ten(subreddit):
-    """ Get top ten posts
-
-    Args:
-        subreddit (str): subreddit name
-    """
+    """ Get top ten posts """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'Ayo User Agent 1.0'}
     response = requests.get(url, headers=headers, allow_redirects=False)
