@@ -2,12 +2,9 @@
 """ Get all posts recursively """
 
 import requests
-from typing import List
-from typing import Optional
 
 
-def recurse(subreddit: str, hot_list: Optional[List[str]] = [], after:
-            Optional[str] = None) -> List[str]:
+def recurse(subreddit, hot_list=[], after=None):
     """ Get all posts recursively """
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'Ayo User Agent 1.0'}
