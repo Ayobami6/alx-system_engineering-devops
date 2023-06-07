@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+"""Get all posts recursively"""
+
 import requests
 import time
 
