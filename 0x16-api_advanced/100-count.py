@@ -5,8 +5,7 @@ import requests
 import time
 
 
-def count_words(subreddit: str, word_list: list, after: str = None,
-                word_counts: dict = None) -> None:
+def count_words(subreddit, word_list, after=None, word_counts=None):
     """Recursively retrieve all posts from subreddit and count occurrences of
     words in 'word_list'.
 
