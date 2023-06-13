@@ -3,7 +3,7 @@
 exec { 'replace-hard':
   provider => shell,
   command  => 'sudo sed -i "s/nofile 5/nofile 8192/" /etc/security/limits.conf',
-  before   => Exec['replace-hard'],
+  before   => Exec['replace-soft'],
   }
 
 exec { 'replace-soft':
